@@ -1,0 +1,970 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+// Mobile first as default
+* {
+    box-sizing: border-box;
+}
+button {
+    cursor: pointer;
+}
+button:hover {
+    background-color: hsla(172, 66%, 36%, 1);
+}
+.main__calculator__form__group:focus-within {
+    border: 2px solid hsla(172, 66%, 36%, 1);
+}
+input:focus {
+    border-top: 2px solid hsla(172, 66%, 36%, 1);
+    border-bottom: 2px solid hsla(172, 66%, 36%, 1);
+}
+.main {
+    width: 100%;
+    height: 1000px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -19px;
+    background-color: hsl(185, 41%, 84%);
+
+    &__header {
+        font-family: 'Space Mono', sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 5px;
+        color: hsl(186, 14%, 43%);
+        text-transform: uppercase;
+        position: relative;
+        top: 40px;
+    }
+
+    &__calculator {
+        background-color: hsl(0, 0%, 100%);
+        width: 99.5%;
+        height: auto;
+        display: grid;
+        grid-template-rows: 350px 250px;
+        grid-template-columns: 100%;
+        row-gap: 80px;
+        padding: 30px;
+        position: relative;
+        top: 50px;
+        left: 1px;
+        border-radius: 15px;
+
+        &__form {
+            grid-row: 1;
+
+            &__title {
+                text-align: left;
+                font-family: 'Space Mono';
+                font-weight: 700;
+                color: hsla(174, 5%, 60%, 1);
+            }
+
+            &__group {
+                width: 100%;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 15px 0 15px;
+                background-color: hsl(202, 50%, 97%);
+                border-radius: 4px;
+
+                &__dollar {
+                    width: 15px;
+                    height: 20px;
+                }
+
+                &__input {
+                    height: inherit;
+                    width: 220px;
+                    border: none;
+                    outline: none;
+                    background-color: inherit;
+                    direction: rtl;
+                    font-family: 'Space Mono';
+                    font-size: 24px;
+                    color: hsla(179, 46%, 18%, 1);
+                }
+            }
+
+            &__btn {
+                width: inherit;
+                height: auto;
+
+                &__title {
+                    font-family: 'Space Mono';
+                    font-weight: 700;
+                    text-align: left;
+                    color: hsla(174, 5%, 60%, 1);
+                }
+            }
+
+            &__button {
+                display: grid;
+                grid-template-columns: 46.5% 46.5%;
+                grid-template-rows: 35px 35px 35px;
+                gap: 20px;
+                width: 100%;
+
+                button {
+                    background-color: hsla(183, 100%, 12%, 1);
+                    border: none;
+                    outline: none;
+                    border-radius: 5px;
+                    font-family: 'Space Mono';
+                    font-size: 18px;
+                    font-weight: 700;
+                    color:  hsl(0, 0%, 100%);
+                }
+                button:hover {
+                    background-color: hsla(172, 66%, 36%, 1);
+                }
+                input:last-child {
+                    color: hsla(183, 100%, 12%, 1);
+                    background-color: hsla(180, 33%, 96%, 1);
+                    border: none;
+                    outline: none;
+                    font-family: 'Space Mono';
+                    font-size: 24px;
+                    font-weight: 700;
+                    border-radius: 5px;
+                    direction: rtl;
+                }
+                input:last-child::placeholder {
+                    text-align: center;
+                    color: hsla(174, 5%, 60%, 1);
+                }
+                input:last-child:focus {
+                    border: 2px solid hsla(172, 66%, 36%, 1);
+                }
+            }
+
+            
+        }
+
+        &__reset {
+            background: hsla(183, 100%, 12%, 1);
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            flex-flow: column nowrap;
+            align-content: space-between;
+            justify-content: space-around;
+
+            &__item {
+                display: flex;
+                flex-flow: row nowrap;
+                width: 100%;
+                height: 50px;
+
+                &__flex {
+                    flex: 50%;
+                }
+            }
+            &__amount {
+                text-align: left;
+                font-family: 'Space Mono';
+                font-size: 16px;
+                color:  hsl(0, 0%, 100%);
+                position: relative;
+                top: -20px;
+            }
+
+            &__person {
+                text-align: left;
+                font-family: 'Space Mono';
+                font-size: 16px;
+                color: hsla(174, 5%, 60%, 1);
+                position: relative;
+                top: -38px;
+            }
+
+            &__input {
+                width: 50%;
+                height: 50px;
+                align-self: center;
+                flex: 50%;
+                direction: rtl;
+                border: none;
+                outline: none;
+                background: inherit;
+                font-family: 'Space Mono';
+                font-size: 24px;
+                color: hsla(172, 66%, 36%, 1);
+            }
+            
+            &__input::placeholder {
+                font-size: 24px;
+                color: hsla(172, 66%, 36%, 1);
+            }
+
+            &__btn {
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                background-color: hsla(172, 66%, 45%, 1);
+                font-family: 'Space Mono';
+                font-size: 20px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+        }
+
+    }
+}
+.attribution { 
+    position: relative;
+    top: 80px;
+    font-family: 'Space Mono'; 
+    font-weight: 500;
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsla(172, 66%, 36%, 1); 
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .main {
+        width: 100%;
+        height: 1000px;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: -19px;
+        background-color: hsl(185, 41%, 84%);
+    
+        &__header {
+            font-family: 'Space Mono', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: hsl(186, 14%, 43%);
+            text-transform: uppercase;
+            position: relative;
+            top: 40px;
+        }
+    
+        &__calculator {
+            background-color: hsl(0, 0%, 100%);
+            width: 60%;
+            height: auto;
+            display: grid;
+            grid-template-rows: 350px 250px;
+            grid-template-columns: 100%;
+            row-gap: 80px;
+            padding: 30px;
+            position: relative;
+            top: 50px;
+            left: 20%;
+            border-radius: 15px;
+            z-index: 2;
+    
+            &__form {
+                grid-row: 1;
+    
+                &__title {
+                    text-align: left;
+                    font-family: 'Space Mono';
+                    font-weight: 700;
+                    color: hsla(174, 5%, 60%, 1);
+                }
+    
+                &__group {
+                    width: 100%;
+                    height: 35px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 15px 0 15px;
+                    background-color: hsl(202, 50%, 97%);
+                    border-radius: 4px;
+    
+                    &__dollar {
+                        width: 15px;
+                        height: 20px;
+                    }
+    
+                    &__input {
+                        height: inherit;
+                        width: 220px;
+                        border: none;
+                        outline: none;
+                        background-color: inherit;
+                        direction: rtl;
+                        font-family: 'Space Mono';
+                        font-size: 24px;
+                        color: hsla(179, 46%, 18%, 1);
+                    }
+                }
+    
+                &__btn {
+                    width: inherit;
+                    height: auto;
+    
+                    &__title {
+                        font-family: 'Space Mono';
+                        font-weight: 700;
+                        text-align: left;
+                        color: hsla(174, 5%, 60%, 1);
+                    }
+                }
+    
+                &__button {
+                    display: grid;
+                    grid-template-columns: 46.5% 46.5%;
+                    grid-template-rows: 35px 35px 35px;
+                    gap: 20px;
+                    width: 100%;
+    
+                    button {
+                        background-color: hsla(183, 100%, 12%, 1);
+                        border: none;
+                        outline: none;
+                        border-radius: 5px;
+                        font-family: 'Space Mono';
+                        font-size: 18px;
+                        font-weight: 700;
+                        color:  hsl(0, 0%, 100%);
+                    }
+    
+                    button:last-child {
+                        color: hsla(174, 5%, 60%, 1);
+                        background-color: hsla(180, 33%, 96%, 1);
+                    }
+                }
+    
+                
+            }
+    
+            &__reset {
+                background: hsla(183, 100%, 12%, 1);
+                border-radius: 10px;
+                padding: 25px;
+                display: flex;
+                flex-flow: column nowrap;
+                align-content: space-between;
+                justify-content: space-around;
+    
+                &__item {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    width: 100%;
+                    height: 50px;
+    
+                    &__flex {
+                        flex: 50%;
+                    }
+                }
+                &__amount {
+                    text-align: left;
+                    font-family: 'Space Mono';
+                    font-size: 18px;
+                    color:  hsl(0, 0%, 100%);
+                    position: relative;
+                    top: -20px;
+                }
+    
+                &__person {
+                    text-align: left;
+                    font-family: 'Space Mono';
+                    font-size: 18px;
+                    color: hsla(174, 5%, 60%, 1);
+                    position: relative;
+                    top: -38px;
+                }
+    
+                &__input {
+                    width: 50%;
+                    height: 50px;
+                    align-self: center;
+                    flex: 50%;
+                    direction: rtl;
+                    border: none;
+                    outline: none;
+                    background: inherit;
+                    font-family: 'Space Mono';
+                    font-size: 24px;
+                    color: hsla(172, 66%, 36%, 1);
+                }
+                
+                &__input::placeholder {
+                    font-size: 24px;
+                    color: hsla(172, 66%, 36%, 1);
+                }
+    
+                &__btn {
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                    background-color: hsla(172, 66%, 45%, 1);
+                    font-family: 'Space Mono';
+                    font-size: 20px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+            }
+    
+        }
+    }   
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .main {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: -19px;
+        background-color: hsl(185, 41%, 84%);
+    
+        &__header {
+            font-family: 'Space Mono', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: hsl(186, 14%, 43%);
+            text-transform: uppercase;
+            position: relative;
+            top: 40px;
+        }
+    
+        &__calculator {
+            background-color: hsl(0, 0%, 100%);
+            width: 78%;
+            height: auto;
+            display: grid;
+            grid-template-rows: 390px;
+            grid-template-columns: 50% 50%;
+            column-gap: 0;
+            padding: 30px;
+            position: relative;
+            top: 50px;
+            left: 11%;
+            border-radius: 15px;
+            z-index: 2;
+    
+            &__form {
+                grid-row: 1;
+
+                &__title {
+                    text-align: left;
+                    font-family: 'Space Mono';
+                    font-weight: 700;
+                    color: hsla(174, 5%, 60%, 1);
+                }
+    
+                &__group {
+                    width: 87%;
+                    height: 35px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 15px 0 15px;
+                    background-color: hsl(202, 50%, 97%);
+                    border-radius: 4px;
+    
+                    &__dollar {
+                        width: 15px;
+                        height: 20px;
+                    }
+    
+                    &__input {
+                        height: inherit;
+                        width: 220px;
+                        border: none;
+                        outline: none;
+                        background-color: inherit;
+                        direction: rtl;
+                        font-family: 'Space Mono';
+                        font-size: 24px;
+                        color: hsla(179, 46%, 18%, 1);
+                    }
+                }
+    
+                &__btn {
+                    width: inherit;
+                    height: auto;
+    
+                    &__title {
+                        font-family: 'Space Mono';
+                        font-weight: 700;
+                        text-align: left;
+                        color: hsla(174, 5%, 60%, 1);
+                    }
+                }
+    
+                &__button {
+                    display: grid;
+                    grid-template-columns: 40.5% 40.5%;
+                    grid-template-rows: 35px 35px 35px;
+                    gap: 15px;
+                    width: 100%;
+    
+                    button {
+                        background-color: hsla(183, 100%, 12%, 1);
+                        border: none;
+                        outline: none;
+                        border-radius: 5px;
+                        font-family: 'Space Mono';
+                        font-size: 18px;
+                        font-weight: 700;
+                        color:  hsl(0, 0%, 100%);
+                    }
+    
+                    button:last-child {
+                        color: hsla(174, 5%, 60%, 1);
+                        background-color: hsla(180, 33%, 96%, 1);
+                    }
+                }
+    
+                
+            }
+    
+            &__reset {
+                background: hsla(183, 100%, 12%, 1);
+                border-radius: 10px;
+                padding: 25px;
+                display: flex;
+                flex-flow: column nowrap;
+                align-content: space-between;
+                justify-content: space-around;
+    
+                &__item {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    width: 100%;
+                    height: 50px;
+    
+                    &__flex {
+                        flex: 50%;
+                    }
+                }
+                &__amount {
+                    text-align: left;
+                    font-family: 'Space Mono';
+                    font-size: 18px;
+                    color:  hsl(0, 0%, 100%);
+                    position: relative;
+                    top: -20px;
+                }
+    
+                &__person {
+                    text-align: left;
+                    font-family: 'Space Mono';
+                    font-size: 18px;
+                    color: hsla(174, 5%, 60%, 1);
+                    position: relative;
+                    top: -38px;
+                }
+    
+                &__input {
+                    width: 50%;
+                    height: 50px;
+                    align-self: center;
+                    flex: 50%;
+                    direction: rtl;
+                    border: none;
+                    outline: none;
+                    background: inherit;
+                    font-family: 'Space Mono';
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: hsla(172, 66%, 36%, 1);
+                }
+                
+                &__input::placeholder {
+                    font-size: 24px;
+                    color: hsla(172, 66%, 36%, 1);
+                }
+    
+                &__btn {
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                    background-color: hsla(172, 66%, 45%, 1);
+                    font-family: 'Space Mono';
+                    font-size: 20px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+            }
+    
+        }
+    } 
+}
+
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+    .main {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: -19px;
+        background-color: hsl(185, 41%, 84%);
+    
+        &__header {
+            font-family: 'Space Mono', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: hsl(186, 14%, 43%);
+            text-transform: uppercase;
+            position: relative;
+            top: 40px;
+        }
+    
+        &__calculator {
+            background-color: hsl(0, 0%, 100%);
+            width: 78%;
+            height: auto;
+            display: grid;
+            grid-template-rows: 390px;
+            grid-template-columns: 50% 50%;
+            column-gap: 0;
+            padding: 30px;
+            position: relative;
+            top: 50px;
+            left: 11%;
+            border-radius: 15px;
+            z-index: 2;
+    
+            &__form {
+                grid-row: 1;
+
+                &__title {
+                    text-align: left;
+                    font-family: 'Space Mono';
+                    font-weight: 700;
+                    color: hsla(174, 5%, 60%, 1);
+                }
+    
+                &__group {
+                    width: 87%;
+                    height: 35px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 15px 0 15px;
+                    background-color: hsl(202, 50%, 97%);
+                    border-radius: 4px;
+    
+                    &__dollar {
+                        width: 15px;
+                        height: 20px;
+                    }
+    
+                    &__input {
+                        height: inherit;
+                        width: 220px;
+                        border: none;
+                        outline: none;
+                        background-color: inherit;
+                        direction: rtl;
+                        font-family: 'Space Mono';
+                        font-size: 24px;
+                        color: hsla(179, 46%, 18%, 1);
+                    }
+                }
+    
+                &__btn {
+                    width: inherit;
+                    height: auto;
+    
+                    &__title {
+                        font-family: 'Space Mono';
+                        font-weight: 700;
+                        text-align: left;
+                        color: hsla(174, 5%, 60%, 1);
+                    }
+                }
+    
+                &__button {
+                    display: grid;
+                    grid-template-columns: 40.5% 40.5%;
+                    grid-template-rows: 35px 35px 35px;
+                    gap: 15px;
+                    width: 100%;
+    
+                    button {
+                        background-color: hsla(183, 100%, 12%, 1);
+                        border: none;
+                        outline: none;
+                        border-radius: 5px;
+                        font-family: 'Space Mono';
+                        font-size: 18px;
+                        font-weight: 700;
+                        color:  hsl(0, 0%, 100%);
+                    }
+    
+                    button:last-child {
+                        color: hsla(174, 5%, 60%, 1);
+                        background-color: hsla(180, 33%, 96%, 1);
+                    }
+                }
+    
+                
+            }
+    
+            &__reset {
+                background: hsla(183, 100%, 12%, 1);
+                border-radius: 10px;
+                padding: 25px;
+                display: flex;
+                flex-flow: column nowrap;
+                align-content: space-between;
+                justify-content: space-around;
+    
+                &__item {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    width: 100%;
+                    height: 50px;
+    
+                    &__flex {
+                        flex: 50%;
+                    }
+                }
+                &__amount {
+                    text-align: left;
+                    font-family: 'Space Mono';
+                    font-size: 18px;
+                    color:  hsl(0, 0%, 100%);
+                    position: relative;
+                    top: -20px;
+                }
+    
+                &__person {
+                    text-align: left;
+                    font-family: 'Space Mono';
+                    font-size: 18px;
+                    color: hsla(174, 5%, 60%, 1);
+                    position: relative;
+                    top: -38px;
+                }
+    
+                &__input {
+                    width: 50%;
+                    height: 50px;
+                    align-self: center;
+                    flex: 50%;
+                    direction: rtl;
+                    border: none;
+                    outline: none;
+                    background: inherit;
+                    font-family: 'Space Mono';
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: hsla(172, 66%, 36%, 1);
+                }
+                
+                &__input::placeholder {
+                    font-size: 24px;
+                    color: hsla(172, 66%, 36%, 1);
+                }
+    
+                &__btn {
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                    background-color: hsla(172, 66%, 45%, 1);
+                    font-family: 'Space Mono';
+                    font-size: 20px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+            }
+    
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .main {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: -20px;
+        background-color: hsl(185, 41%, 84%);
+    
+        &__header {
+            font-family: 'Space Mono', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: hsl(186, 14%, 43%);
+            text-transform: uppercase;
+            position: relative;
+            top: 40px;
+        }
+    
+        &__calculator {
+            background-color: hsl(0, 0%, 100%);
+            width: 850px;
+            height: auto;
+            display: grid;
+            grid-template-rows: 390px;
+            grid-template-columns: 50% 50%;
+            column-gap: 0;
+            padding: 30px;
+            position: relative;
+            top: 50px;
+            left: 23%;
+            border-radius: 15px;
+            z-index: 2;
+    
+            &__form {
+                grid-row: 1;
+
+                &__title {
+                    text-align: left;
+                    font-family: 'Space Mono';
+                    font-weight: 700;
+                    color: hsla(174, 5%, 60%, 1);
+                }
+    
+                &__group {
+                    width: 87%;
+                    height: 35px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 15px 0 15px;
+                    background-color: hsl(202, 50%, 97%);
+                    border-radius: 4px;
+    
+                    &__dollar {
+                        width: 15px;
+                        height: 20px;
+                    }
+    
+                    &__input {
+                        height: inherit;
+                        width: 220px;
+                        border: none;
+                        outline: none;
+                        background-color: inherit;
+                        direction: rtl;
+                        font-family: 'Space Mono';
+                        font-size: 24px;
+                        color: hsla(179, 46%, 18%, 1);
+                    }
+                }
+    
+                &__btn {
+                    width: inherit;
+                    height: auto;
+    
+                    &__title {
+                        font-family: 'Space Mono';
+                        font-weight: 700;
+                        text-align: left;
+                        color: hsla(174, 5%, 60%, 1);
+                    }
+                }
+    
+                &__button {
+                    display: grid;
+                    grid-template-columns: 40.5% 40.5%;
+                    grid-template-rows: 35px 35px 35px;
+                    gap: 15px;
+                    width: 100%;
+    
+                    button {
+                        background-color: hsla(183, 100%, 12%, 1);
+                        border: none;
+                        outline: none;
+                        border-radius: 5px;
+                        font-family: 'Space Mono';
+                        font-size: 18px;
+                        font-weight: 700;
+                        color:  hsl(0, 0%, 100%);
+                    }
+    
+                    button:last-child {
+                        color: hsla(174, 5%, 60%, 1);
+                        background-color: hsla(180, 33%, 96%, 1);
+                    }
+                }
+    
+                
+            }
+    
+            &__reset {
+                background: hsla(183, 100%, 12%, 1);
+                border-radius: 10px;
+                padding: 25px;
+                display: flex;
+                flex-flow: column nowrap;
+                align-content: space-between;
+                justify-content: space-around;
+    
+                &__item {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    width: 100%;
+                    height: 50px;
+    
+                    &__flex {
+                        flex: 50%;
+                    }
+                }
+                &__amount {
+                    text-align: left;
+                    font-family: 'Space Mono';
+                    font-size: 18px;
+                    color:  hsl(0, 0%, 100%);
+                    position: relative;
+                    top: -20px;
+                }
+    
+                &__person {
+                    text-align: left;
+                    font-family: 'Space Mono';
+                    font-size: 18px;
+                    color: hsla(174, 5%, 60%, 1);
+                    position: relative;
+                    top: -38px;
+                }
+    
+                &__input {
+                    width: 50%;
+                    height: 50px;
+                    align-self: center;
+                    flex: 50%;
+                    direction: rtl;
+                    border: none;
+                    outline: none;
+                    background: inherit;
+                    font-family: 'Space Mono';
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: hsla(172, 66%, 36%, 1);
+                }
+                
+                &__input::placeholder {
+                    font-size: 24px;
+                    color: hsla(172, 66%, 36%, 1);
+                }
+    
+                &__btn {
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                    background-color: hsla(172, 66%, 45%, 1);
+                    font-family: 'Space Mono';
+                    font-size: 20px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+            }
+    
+        }
+    }
+}
