@@ -28,10 +28,6 @@ const Calculator = () => {
     const [bills, setBill] = useState(0);
     const [customers, setCustomer] = useState(0);
     const [tips, setTip] = useState(0);
-    // let oneTip = 0;
-    // let oneTotal = 0;
-    //console.log(formik.values.bill, formik.values.tip, formik.values.customer);
-    //console.log(bills, tips, customers);
 
     useEffect(()=> {
         var rbill = parseFloat(formik.values.bill);
@@ -58,7 +54,7 @@ const Calculator = () => {
             
             <section className="main__calculator">
                 <div className="main__calculator__form">
-                    <h3 className="main__calculator__form__title">Bill</h3>
+                    <h2 className="main__calculator__form__title">Bill</h3>
                     <div className='main__calculator__form__group'>
                         <img src={dollar} alt="Icon" className='main__calculator__form__group__dollar'/>
                         <input 
@@ -70,7 +66,7 @@ const Calculator = () => {
                         />
                     </div>
                     <div className='main__calculator__form__btn'>
-                        <h3 className='main__calculator__form__btn__title'>Select tip %</h3>
+                        <h2 className='main__calculator__form__btn__title'>Select tip %</h3>
                         <div className='main__calculator__form__button'>
                             <button type='button' value='5%' name='tip' onClick={(e)=>{formik.values.tip = e.target.value}}>5%</button>
                             <button type='button' value='10%' name='tip' onClick={(e)=>{formik.values.tip = e.target.value}}>10%</button>
@@ -80,7 +76,7 @@ const Calculator = () => {
                             <input type='text' placeholder='Custom' name='tip' onChange={formik.handleChange} value={formik.values.tip}/>
                         </div>
                     </div>
-                    <h3 className="main__calculator__form__title">Number of People</h3>
+                    <h2 className="main__calculator__form__title">Number of People</h3>
                     <div className='main__calculator__form__group'>
                         <img src={person} alt="Icon" className='main__calculator__form__group__dollar'/>
                         <input className="main__calculator__form__group__input" name='customer' placeholder={customers} value={formik.values.customer} onChange={formik.handleChange}/>
