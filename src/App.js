@@ -1,11 +1,13 @@
 import './App.css';
 import './styles/index.css';
-import Calculator from './pages/Calculator';
+//import Calculator from './pages/Calculator';
+import Recurse from './components/recurse';
 
 function App() {
   return (
     <div className="App">
-      <Calculator/>
+      {/* <Calculator/> */}
+      <Recurse label="Click me please"></Recurse>
     </div>
   );
 }
